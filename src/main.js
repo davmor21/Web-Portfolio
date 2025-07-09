@@ -91,9 +91,10 @@ app.innerHTML = `
       <section id="interests">
         <h2>Interests</h2>
         <ul class="list-inline mb-0">
-          <li class="list-inline-item me-3">Cloud Computing</li>
+          <li class="list-inline-item me-3">Software Engineering</li>  
+          <li class="list-inline-item me-3">Programming</li>
           <li class="list-inline-item me-3">Automation</li>
-          <li class="list-inline-item me-3">DevOps</li>
+          <li class="list-inline-item me-3">Computer Hardware</li>
           <li class="list-inline-item">Problem Solving</li>
         </ul>
       </section>

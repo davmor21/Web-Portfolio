@@ -91,7 +91,6 @@ body {
 
 /* ── Mobile Layout Fix ── */
 @media (max-width: 991px) {
-  /* allow full page to scroll */
   .resume {
     height: auto !important;
   }
@@ -105,6 +104,14 @@ body {
     height: auto !important;
     max-height: none !important;
     padding: 0 !important;
+  }
+  .resume header {
+    padding-bottom: 4rem; /* avoid overlap */
+  }
+  .profile-photo {
+    position: static !important;
+    display: block !important;
+    margin: 0 auto 1rem !important;
   }
 }
 
@@ -163,11 +170,12 @@ footer#contact {
   margin: 0.5in;
 }
 @media print {
+  /* use autosizing rows so content fits */
   .resume {
     display: grid !important;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh !important;
+    grid-template-rows: auto auto auto;
+    height: auto !important;
     margin: 0 !important;
   }
   .resume header { grid-column: 1 / -1; }
@@ -186,19 +194,20 @@ footer#contact {
   }
   footer#contact { grid-column: 1 / -1; grid-row: 3 / 4; }
 
+  /* tighten type & spacing */
   body, .resume {
-    font-size: 12px !important;
+    font-size: 11px !important;
     line-height: 1.3 !important;
   }
   .resume header {
     padding: 1rem 0 !important;
   }
   h1.display-4 {
-    font-size: 26px !important;
+    font-size: 24px !important;
     margin-bottom: 0.25rem !important;
   }
   h2 {
-    font-size: 20px !important;
+    font-size: 18px !important;
     margin: 0.5rem 0 0.25rem !important;
   }
   .card {
@@ -206,65 +215,40 @@ footer#contact {
     box-shadow: none !important;
   }
   .card .card-body {
-    padding: 0.75rem !important;
+    padding: 0.5rem !important;
   }
   .profile-photo {
-    width: 80px !important;
-    height: 80px !important;
+    width: 60px !important;
+    height: 60px !important;
     border-width: 1px !important;
   }
-  .btn-outline-primary {
-    display: none !important;
-  }
+
+  /* hide screen buttons, show text links */
+  .btn-outline-primary { display: none !important; }
   .print-links {
     display: block !important;
     margin: 1rem 0 !important;
     color: var(--text-color) !important;
   }
-  .sidebar .badge,
-  .sidebar .badge * {
+
+  /* badges → black text in print */
+  .sidebar .badge, .sidebar .badge * {
     color: #000 !important;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
   }
+
+  /* justify and divide */
   .card .card-text {
     text-align: justify !important;
   }
+  /* full-width dividers */
+  #experience + .card,
   #education + #skills,
   #skills + #interests {
     border-top: 1px solid var(--muted-text) !important;
-    padding-top: 0.75rem !important;
-    margin-top: 0.75rem !important;
-  }
-}
-/* ── Improved Mobile Layout ── */
-@media (max-width: 991px) {
-  /* Let the page itself scroll, not the inner panels */
-  .resume {
-    height: auto !important;
-  }
-  .content {
-    display: block !important;
-    overflow: visible !important;
-  }
-  .main,
-  .sidebar {
-    flex: none !important;
-    overflow: visible !important;
-    height: auto !important;
-    max-height: none !important;
-    padding: 0 !important;
-  }
-
-  /* Push the header down so image never overlaps text */
-  .resume header {
-    padding-bottom: 4rem; /* enough space for the 80px image + margin */
-  }
-  /* Force the photo below the header text */
-  .profile-photo {
-    position: static !important;
-    display: block !important;
-    margin: 0 auto 1rem !important;
+    padding-top: 0.5rem !important;
+    margin-top: 0.5rem !important;
   }
 }
