@@ -1,7 +1,4 @@
-import './style.css'
-
-const app = document.querySelector('#app')
-app.innerHTML = `
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const t of s.addedNodes)t.tagName==="LINK"&&t.rel==="modulepreload"&&i(t)}).observe(document,{childList:!0,subtree:!0});function r(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(e){if(e.ep)return;e.ep=!0;const s=r(e);fetch(e.href,s)}})();const l=document.querySelector("#app");l.innerHTML=`
 <div class="resume d-flex flex-column">
   <!-- HEADER -->
   <header class="position-relative text-center py-4">
@@ -119,4 +116,4 @@ app.innerHTML = `
     </div>
   </footer>
 </div>
-`
+`;
