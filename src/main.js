@@ -1,4 +1,5 @@
 import './style.css'
+import profilePhoto from './profile-photo.jpg'
 
 const app = document.querySelector('#app')
 app.innerHTML = `
@@ -8,7 +9,7 @@ app.innerHTML = `
     <h1 class="display-4 mb-1">Davon Morris</h1>
     <p class="lead mb-0">Programmer Analyst</p>
     <img
-      src="./src/profile-photo.jpg"
+      src="${profilePhoto}"
       alt="Davon Morris"
       class="position-absolute profile-photo"
     />
